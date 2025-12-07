@@ -1,0 +1,13 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+-- Guardar posição inicial
+local initialPos = hrp.Position
+
+task.wait(2)
+
+-- Teleportar 4 studs no eixo Z
+hrp.CFrame = CFrame.new(initialPos + Vector3.new(0, 0, 4))
